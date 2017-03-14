@@ -1,0 +1,26 @@
+---
+# tasks file for update-sudoers
+- name: Verify 'Admin' Group
+  group:
+    name: admin
+    state: present
+
+- name: Allow 'admin' group to sudo with Password
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%admin'
+    line: '%admin ALL=(ALL) PASSWD: ALL'
+    backup: yes
+
+- name: Verify 'Vagrant' user
+  user:
+    name: vagrant
+    state: present
+
+- name: Allow 'vagrant' user to sudo without Password
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    line: 'vagrant ALL=(ALL) NOPASSWD: ALL'
+    backup: yes
