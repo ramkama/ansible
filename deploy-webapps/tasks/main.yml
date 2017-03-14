@@ -1,0 +1,14 @@
+---
+# tasks file for deploy-apps
+- name: Deploy SAMPLE WAR
+  copy: src=hello.war dest=/vagrant/tomcat7/webapps owner=vagrant group=vagrant
+
+- name: Stop Tomcat
+  shell: /vagrant/tomcat7/bin/shutdown.sh
+  become: true
+  become_user: vagrant
+
+- name: Start Tomcat
+  shell: /vagrant/tomcat7/bin/startup.sh
+  become: true
+  become_user: vagrant
