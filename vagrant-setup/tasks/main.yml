@@ -1,0 +1,10 @@
+---
+# tasks file for deploy-apps
+- name: nginx install
+  apt:
+    name: nginx 
+    state: latest
+
+
+        
+        

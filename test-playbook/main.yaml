@@ -1,0 +1,10 @@
+---
+- name:
+  hosts: mac
+#  tasks:
+#    - name: test ansible
+
+- name: Create Ansible Folder Structure
+  shell: /Volumes/Sandbox/git/ansible/create-ansible-folder.sh
+#  become: true
+#  become_user: vagrant
