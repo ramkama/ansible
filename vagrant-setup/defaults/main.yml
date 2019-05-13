@@ -1,2 +1,7 @@
 ---
 # defaults file for vagrant-setup
+vagrant_virtualbox_version: virtualbox
+vagrant_virtualbox_install: true
+vagrant_download_url: https://download.virtualbox.org/virtualbox/6.0.6/VirtualBox-6.0.6-130049-OSX.dmg
+vagrant_install_dir: /Volumes/Sandbox/softwares
+vagrant_version: vagrant

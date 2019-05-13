@@ -1,10 +1,12 @@
+# tasks file for vagrant setup
 ---
-# tasks file for deploy-apps
-- name: nginx install
-  apt:
-    name: nginx 
+- name: Install Virtualbox on MacOS
+  homebrew_cask:
+    name: "{{vagrant_virtualbox_version}}" 
     state: latest
 
-
-        
-        
+- name: Install Vagrant on MacOS
+  homebrew_cask:
+    name: "{{vagrant_version}}" 
+    #when: "{{vagrant_virtualbox_install}}"
+    state: latest

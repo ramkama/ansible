@@ -2,4 +2,4 @@
 - name: Vagrant Setup
   hosts: mac
   roles:
-    - common
+    - vagrant-setup
